@@ -1,0 +1,198 @@
+
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.container {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+
+  height:500px;
+  max-width:960px;
+  width:50%;
+  margin-inline:18rem;
+}
+.loading__images{
+    width:30%;
+    position: relative;
+    top: 10%;
+}
+.nav {
+  display: flex;
+  flex-direction:column;
+   margin:5rem 0;
+
+}
+.span{
+    display:flex;
+    gap:1.9rem;
+    color:white;
+}
+h1{
+   font-size:3rem;
+
+}
+
+.blue,
+.pink,
+.yellow {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform:scale(1.5);
+  margin:1.8rem 0;
+
+}
+.blue:hover,
+.pink:hover,
+.yellow:hover{
+    transform:scale(2.2);
+}
+.blue {
+  background:#b5b1ff;
+}
+.pink {
+  background: #eb54a4;
+}
+.yellow {
+  background:#edb70dcf;
+}
+img {
+  width: 100%;
+  position: relative;
+    right: 50%;
+}
+.rotate {
+  display: none;
+}
+
+.rotate {
+  width: 100%  !important;
+  animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+input[type="file"]{
+    display:none;
+}
+.upload{
+    margin:1.2rem 0;
+    color:white;
+    background:#f5af09;
+    width:25rem;
+    padding:0.5rem 0 ;
+    position:absolute;
+    font-size:1.5rem;
+    text-align:center
+
+}
+
+.file{
+    display:inline-block;
+    position:absolute;
+    left:5%;
+    top:35%;
+    fill:white;
+}
+.image{
+  position:absolute;
+  z-index:1;
+    width:30%;
+    top:60%;
+}
+@media(max-width:960px){
+    .container{
+        flex-direction:column;
+         margin-inline:15rem 0;
+    }
+    .loading__images {
+        width:200px;
+    }
+    img{
+        width:100%;
+        margin-inline:3rem;
+    }
+}
+@media(max-width:450px){
+body{
+    overflow:hidden;
+}
+
+    .container{
+        width:100%;
+        height:100%;
+        margin:0rem 1rem;
+
+        overflow:hidden;
+    }
+    h1{
+
+        font-size:2rem;
+    }
+    img{
+        width:100%;
+        margin-inline:5.5rem;
+    }
+    .upload{
+        width:15rem;
+        font-size:1.2rem;
+
+    }
+}
