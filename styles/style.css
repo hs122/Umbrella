@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Proximanova';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/ProximaNovaCond-Light.woff2') format('woff2'),
+      url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/ProximaNovaCond-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
 
 1. Use a more-intuitive box-sizing model.
 */
@@ -50,6 +57,9 @@ p, h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+body{
+  background:linear-gradient(#f52292 0%, 30%, rgb(221 227 229 / 20%) 50%);
+}
 
 .container {
   display: flex;
@@ -58,26 +68,27 @@ p, h1, h2, h3, h4, h5, h6 {
 
   height:500px;
   max-width:960px;
-  width:50%;
-  margin-inline:18rem;
+  width:100%;
+
+  margin-inline:15rem;
 }
 .loading__images{
-    width:30%;
+    width:38%;
     position: relative;
     top: 10%;
 }
-.nav {
+.nav{
   display: flex;
   flex-direction:column;
    margin:5rem 0;
 
 }
-.span{
+.content__color{
     display:flex;
     gap:1.9rem;
     color:white;
 }
-h1{
+.content__heading{
    font-size:3rem;
 
 }
@@ -99,25 +110,33 @@ h1{
     transform:scale(2.2);
 }
 .blue {
-  background:#b5b1ff;
+  background:#322ac9;
 }
 .pink {
-  background: #eb54a4;
+  background: #f52292;
 }
 .yellow {
-  background:#edb70dcf;
+  background:#ffc308cf;
 }
 img {
   width: 100%;
-  position: relative;
-    right: 50%;
+  position:relative;
+  right:50%;
 }
 .rotate {
   display: none;
 }
+.delete_image{
+  font-size:1.5rem;
+  display:none;
+  position: absolute;
+  bottom :31.8%;
+ left: 80%;
+  color:white;
 
+}
 .rotate {
-  width: 100%  !important;
+  width: 25%  !important;
   animation: rotation 2s infinite linear;
 }
 @keyframes rotation {
@@ -135,28 +154,34 @@ input[type="file"]{
 .upload{
     margin:1.2rem 0;
     color:white;
-    background:#f5af09;
+    background:#f52292;
     width:25rem;
     padding:0.5rem 0 ;
     position:absolute;
     font-size:1.5rem;
-    text-align:center
-
+    text-align:center;
+    cursor:pointer;
+    box-shadow:0 0 0 0.2rem lightgrey;
+}
+.upload:hover{
+ box-shadow:inset 500px 0 0 0 hsl(0 , 29% , 61%,1);
 }
 
 .file{
     display:inline-block;
     position:absolute;
     left:5%;
-    top:35%;
-    fill:white;
+    top:22%;
+
 }
+
 .image{
   position:absolute;
-  z-index:1;
-    width:30%;
-    top:60%;
+    z-index:1;
+    width:10%;
+    top:75%;
 }
+
 @media(max-width:960px){
     .container{
         flex-direction:column;
@@ -168,6 +193,15 @@ input[type="file"]{
     img{
         width:100%;
         margin-inline:3rem;
+    }
+    .delete_image{
+      font-size:1.4rem;
+      display:none;
+      position: absolute;
+      bottom :4.5%;
+     left: 99%;
+
+
     }
 }
 @media(max-width:450px){
@@ -193,6 +227,15 @@ body{
     .upload{
         width:15rem;
         font-size:1.2rem;
+
+    }
+    .delete_image{
+      font-size:1.4rem;
+      display:none;
+      position: absolute;
+      bottom :-1%;
+     left: 60%;
+
 
     }
 }
